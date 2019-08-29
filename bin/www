@@ -7,12 +7,14 @@
 var app = require('../app');
 var debug = require('debug')('node-express:server');
 var http = require('http');
+const mongoose = require('mongoose');
 
 /**
  * Get port from environment and store in Express.
  */
 
 var port = normalizePort(process.env.PORT || '3000');
+var URL = 'mongodb://127.0.0.1:27017/testdb';
 app.set('port', port);
 
 /**
@@ -20,6 +22,14 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
+
+// mongoose.connect(URL,(err)=>{
+//   if(!err){
+//     console.log('Cpnnected to Mongodb');
+//   }else{
+//     console.log(err);
+//   }
+// })
 
 /**
  * Listen on provided port, on all network interfaces.
