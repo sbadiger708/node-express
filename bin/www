@@ -23,13 +23,13 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
-// mongoose.connect(URL,(err)=>{
-//   if(!err){
-//     console.log('Cpnnected to Mongodb');
-//   }else{
-//     console.log(err);
-//   }
-// })
+mongoose.connect(URL,(err)=>{
+  if(!err){
+    console.log('Cpnnected to Mongodb');
+  }else{
+    console.log(err);
+  }
+})
 
 /**
  * Listen on provided port, on all network interfaces.
